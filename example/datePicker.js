@@ -37,9 +37,16 @@ const DatePicker = ({
     },
 
     btn: {
-      padding: 10,
+      padding: 6,
       borderRadius: 50,
       backgroundColor: "#fff",
+      alignItems: "center",
+      justifyContent: "center",
+    },
+
+    btnImage: {
+      height: 20,
+      width: 20,
     },
 
     dateContainer: {
@@ -88,7 +95,10 @@ const DatePicker = ({
             setWeekStart(subDays(weekStart, 7));
           }}
         >
-          {/* <FontAwesomeIcon size={16} icon={faCaretLeft} /> */}
+          <Image
+            style={styles.btnImage}
+            source={require("./assets/leftIcon.png")}
+          />
         </TouchableOpacity>
 
         <View style={styles.dateContainer}>
@@ -106,7 +116,7 @@ const DatePicker = ({
                         : format(addDays(weekStart, index), "Do") ===
                           format(currDate, "Do")
                         ? currDateDay
-                        : remainingDates,
+                        : remainingDays,
                     fontWeight:
                       format(addDays(weekStart, index), "Do") ===
                       format(currDate, "Do")
@@ -156,7 +166,10 @@ const DatePicker = ({
             setWeekStart(addDays(weekStart, 7));
           }}
         >
-          {/* <FontAwesomeIcon size={16} icon={faCaretRight} /> */}
+          <Image
+            style={styles.btnImage}
+            source={require("./assets/rightIcon.png")}
+          />
         </TouchableOpacity>
       </View>
     </View>
