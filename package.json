@@ -1,0 +1,31 @@
+{
+  "name": "react-native-date-picker-by-week",
+  "version": "1.0.0",
+  "description": "A React Native component to select date by week",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/risav-sarkar/react-native-date-picker-by-week.git"
+  },
+  "keywords": [
+    "react-native",
+    "datepicker",
+    "date-picker",
+    "date-picker-weekly"
+  ],
+  "author": "Risav Sarkar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/risav-sarkar/react-native-date-picker-by-week/issues"
+  },
+  "homepage": "https://github.com/risav-sarkar/react-native-date-picker-by-week#readme",
+  "dependencies": {
+    "date-fns": "^2.29.3"
+  }
+}
