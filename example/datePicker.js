@@ -4,7 +4,17 @@ import React from "react";
 import { format, startOfWeek, subDays, addDays } from "date-fns";
 import { useState } from "react";
 
-const DatePicker = ({ date, setDate, backgroundColor1, grey1, color1 }) => {
+const DatePicker = ({
+  date,
+  setDate,
+  currDateDay,
+  currDayDate,
+  selectedDateBackground,
+  selectedDay,
+  selectedDate,
+  remainingDays,
+  remainingDates,
+}) => {
   const currDate = new Date();
 
   const [weekStart, setWeekStart] = useState(
@@ -50,11 +60,22 @@ const DatePicker = ({ date, setDate, backgroundColor1, grey1, color1 }) => {
     },
     dateBtnSelected: {
       borderRadius: 50,
-      backgroundColor: backgroundColor1,
+      backgroundColor: selectedDateBackground,
       height: 35,
       width: 35,
       alignItems: "center",
       justifyContent: "center",
+    },
+    shadow: {
+      shadowColor: "#000",
+      shadowOffset: {
+        width: 0,
+        height: 2,
+      },
+      shadowOpacity: 0.23,
+      shadowRadius: 2.62,
+
+      elevation: 4,
     },
   });
 
@@ -62,7 +83,7 @@ const DatePicker = ({ date, setDate, backgroundColor1, grey1, color1 }) => {
     <View style={styles.container}>
       <View style={styles.menu}>
         <TouchableOpacity
-          style={[styles.btn]}
+          style={[styles.btn, styles.shadow]}
           onPress={() => {
             setWeekStart(subDays(weekStart, 7));
           }}
@@ -80,9 +101,12 @@ const DatePicker = ({ date, setDate, backgroundColor1, grey1, color1 }) => {
                     marginBottom: 8,
                     color:
                       format(addDays(weekStart, index), "Do") ===
-                      format(currDate, "Do")
-                        ? "#fff"
-                        : grey1,
+                      format(date, "Do")
+                        ? selectedDay
+                        : format(addDays(weekStart, index), "Do") ===
+                          format(currDate, "Do")
+                        ? currDateDay
+                        : remainingDates,
                     fontWeight:
                       format(addDays(weekStart, index), "Do") ===
                       format(currDate, "Do")
@@ -111,11 +135,11 @@ const DatePicker = ({ date, setDate, backgroundColor1, grey1, color1 }) => {
                       color:
                         format(addDays(weekStart, index), "Do") ===
                         format(date, "Do")
-                          ? color1
+                          ? selectedDate
                           : format(addDays(weekStart, index), "Do") ===
                             format(currDate, "Do")
-                          ? "#fff"
-                          : grey1,
+                          ? currDayDate
+                          : remainingDates,
                     }}
                   >
                     {format(addDays(weekStart, index), "d")}
@@ -127,7 +151,7 @@ const DatePicker = ({ date, setDate, backgroundColor1, grey1, color1 }) => {
         </View>
 
         <TouchableOpacity
-          style={[styles.btn]}
+          style={[styles.btn, styles.shadow]}
           onPress={() => {
             setWeekStart(addDays(weekStart, 7));
           }}
