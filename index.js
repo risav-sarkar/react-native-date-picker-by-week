@@ -1,1 +1,2 @@
-export { default as DatePicker } from "./datePicker";
+import DatePicker from "./datePicker";
+export default DatePicker;
