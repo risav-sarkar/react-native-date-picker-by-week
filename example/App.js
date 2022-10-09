@@ -10,9 +10,13 @@ export default function App() {
       <DatePicker
         date={date}
         setDate={setDate}
-        backgroundColor1={"red"}
-        grey1={"blue"}
-        color1={"yellow"}
+        currDateDay={"#000000"}
+        currDayDate={"#000000"}
+        remainingDays={"#adadad"}
+        remainingDates={"#a8a8a8"}
+        selectedDateBackground={"#400D51"}
+        selectedDay={"#400D51"}
+        selectedDate={"#FFE9A0"}
       />
     </View>
   );
@@ -21,7 +25,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#adadad",
+    backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
   },

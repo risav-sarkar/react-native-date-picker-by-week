@@ -1,6 +1,6 @@
 {
   "name": "react-native-date-picker-by-week",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A React Native component to select date by week",
   "main": "index.js",
   "directories": {
