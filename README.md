@@ -15,9 +15,13 @@ The date picker by week component for react-native.
 
 The component required date-fns library
 
-> `npm install --save date-fns`
+```
+npm install --save date-fns
+```
 
-> `npm install --save react-native-date-picker-by-week`
+```
+npm install --save react-native-date-picker-by-week
+```
 
 ## Basic usage
 
