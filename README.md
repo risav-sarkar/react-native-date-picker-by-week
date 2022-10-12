@@ -2,7 +2,7 @@
 
 The date picker by week component for react-native.
 
-![weekView](assets/demo.gif)
+<img src="assets/demo.gif" alt="drawing" style="width:200px;"/>
 
 ## Table of Contents
 
